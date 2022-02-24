@@ -1,7 +1,7 @@
 <template>
   <div class="home bg-gray-50 h-fit">
     <div class="flex justify-center">
-      <img src="@/assets/snap-mobile-logo.png" alt="Snap! Logo" />
+      <img src="@/assets/Sams.png" alt="Sams Bottle Shop" />
     </div>
     <div class="flex justify-around bg-blue-300 border text-lg font-semibold">
       <h3>Total Count: {{ totalCount }}</h3>

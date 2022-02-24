@@ -4,7 +4,7 @@ interface BeerStore {
   totalCount: number;
   totalPrice: number;
   timeShopping: number;
-  receipt: [];
+  receipt: string[];
 }
 
 export const useBeerStore = defineStore("beersRus", {

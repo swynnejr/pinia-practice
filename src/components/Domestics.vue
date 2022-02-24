@@ -106,46 +106,36 @@ import { storeToRefs } from "pinia";
 
 // Search Form Refs thanks to Pinia State Management
 const beerStore = useBeerStore();
-const { totalCount, totalPrice, totalVolume, receipt } = storeToRefs(beerStore);
-
-const calculateVolume = () => {
-  totalVolume.value = totalCount.value * 12;
-};
+const { totalCount, totalPrice, receipt } = storeToRefs(beerStore);
 
 const buyBudLightSingle = () => {
   totalCount.value++;
   totalPrice.value += 2.0;
-  calculateVolume();
   receipt.value.push("Bud Light 12oz");
 };
 const buyBudLightSixer = () => {
   totalCount.value += 6;
   totalPrice.value += 8.5;
-  calculateVolume();
   receipt.value.push("Bud Light Six Pack");
 };
 const buyMillerLiteSixer = () => {
   totalCount.value += 6;
   totalPrice.value += 8.5;
-  calculateVolume();
   receipt.value.push("Miller Lite Six Pack");
 };
 const buyMillerLiteTwelve = () => {
   totalCount.value += 12;
   totalPrice.value += 13.5;
-  calculateVolume();
   receipt.value.push("Miller Lite Twelve Pack");
 };
 const buyCoorsTwelve = () => {
   totalCount.value += 12;
   totalPrice.value += 14;
-  calculateVolume();
   receipt.value.push("Coors Original Twelve Pack");
 };
 const buyCoorsTwentyFour = () => {
   totalCount.value += 24;
   totalPrice.value += 22;
-  calculateVolume();
   receipt.value.push("Coors Original Twenty Four Pack");
 };
 </script>
