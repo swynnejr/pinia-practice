@@ -19,18 +19,33 @@ export const useBeerStore = defineStore("beersRus", {
     receipt: [],
   }),
   actions: {
-    incrementCount() {
-      this.totalCount++;
+    removeLastItem() {
+      this.receipt.pop();
     },
-    decrementCount() {
-      this.totalCount--;
+    clearCart() {
+      this.receipt = [];
+      this.totalCount = 0;
+      this.totalPrice = 0;
+      this.totalVolume = 0;
+      this.costPerServing = 0;
     },
-    addCost(price: number) {
-      this.totalPrice += price;
+    triggerCounter() {
+      setInterval(() => {
+        this.timeShopping += 1;
+      }, 1000);
     },
-    removeCost(price: number) {
-      this.totalPrice -= price;
-    },
+    // incrementCount() {
+    //   this.totalCount++;
+    // },
+    // decrementCount() {
+    //   this.totalCount--;
+    // },
+    // addCost(price: number) {
+    //   this.totalPrice += price;
+    // },
+    // removeCost(price: number) {
+    //   this.totalPrice -= price;
+    // },
   },
   getters: {
     getTime(state) {

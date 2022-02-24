@@ -6,7 +6,7 @@
     <div class="flex justify-around bg-blue-300 border text-lg font-semibold">
       <h3>Total Count: {{ totalCount }}</h3>
       <h3>Total Price: {{ totalPrice }}</h3>
-      <h3>Cost Per Serving: {{ costPerServing }}</h3>
+      <!-- <h3>Cost Per Serving: {{ costPerServing }}</h3> -->
       <h3>Time Shopping: {{ timeShopping }}</h3>
     </div>
     <div class="flex justify-around">
@@ -23,7 +23,7 @@ import Domestics from "@/components/Domestics.vue";
 import IPA from "../components/IPA.vue";
 import Stouts from "../components/Stouts.vue";
 import Belgians from "../components/Belgians.vue";
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 
 const beerStore = useBeerStore();
 
@@ -32,13 +32,18 @@ const {
   totalPrice,
   totalVolume,
   timeShopping,
+  getTime,
   // storeToRefs lesson
 } = storeToRefs(beerStore); /* storeToRefs */
 
-const costPerServing = computed(() => {
-  if (totalCount.value != 0) return totalVolume.value / totalCount.value;
-  else return "NA";
-});
+const { triggerCounter } = beerStore;
+
+// const costPerServing = computed(() => {
+//   if (totalCount.value != 0) return totalVolume.value / totalCount.value;
+//   else return "NA";
+// });
+
+onMounted(() => (timeShopping.value == 0 ? triggerCounter() : ""));
 
 // Formatting
 // const formatDollars = (number: number) => formatNumber(number, "$0,0[.]00");
