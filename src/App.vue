@@ -1,5 +1,5 @@
 <template>
-    <router-view />
+  <router-view />
   <div id="nav">
     <router-link class="text-blue-300" to="/">Store</router-link> |
     <router-link to="/about">Checkout</router-link>

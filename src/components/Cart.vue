@@ -4,12 +4,6 @@
     <div>
       <button
         class="mb-4 mx-2 bg-red-500 hover:bg-red-300 text-white text-sm font-bold py-1 px-2 rounded-full"
-        @click="beerStore.removeLastItem"
-      >
-        Remove Item
-      </button>
-      <button
-        class="mb-4 mx-2 bg-red-500 hover:bg-red-300 text-white text-sm font-bold py-1 px-2 rounded-full"
         @click="beerStore.clearCart"
       >
         Clear Cart
@@ -29,13 +23,5 @@ import { storeToRefs } from "pinia";
 
 const beerStore = useBeerStore();
 
-const {
-  totalCount,
-  totalPrice,
-  totalVolume,
-  timeShopping,
-  receipt,
-  // removeLastItem,
-  // storeToRefs lesson
-} = storeToRefs(beerStore); /* storeToRefs */
+const { receipt } = storeToRefs(beerStore); /* storeToRefs */
 </script>

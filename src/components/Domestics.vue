@@ -16,12 +16,6 @@
           >
             Buy
           </button>
-          <!-- <button
-            class="hover:bg-red-300 text-red font-bold p-2 rounded"
-            @click="removeBudLightSingle"
-          >
-            Cancel
-          </button> -->
         </div>
         <img src="@/assets/BL_Core_Can.png" class="h-24 mt-8" />
         <div class="bg-white border shadow-lg rounded-lg p-2 m-2">
@@ -36,12 +30,6 @@
           >
             Buy
           </button>
-          <!-- <button
-            class="hover:bg-red-300 text-red font-bold p-2 rounded"
-            @click="removeBudLightSixer"
-          >
-            Cancel
-          </button> -->
         </div>
       </div>
     </div>
@@ -60,12 +48,6 @@
           >
             Buy
           </button>
-          <!-- <button
-            class="hover:bg-red-300 text-red font-bold p-2 rounded"
-            @click="removeMillerLiteSixer"
-          >
-            Cancel
-          </button> -->
         </div>
         <img src="@/assets/Miller-Lite.png" class="h-24 mt-8" />
         <div class="bg-white border shadow-lg rounded-lg p-2 m-2">
@@ -80,12 +62,6 @@
           >
             Buy
           </button>
-          <!-- <button
-            class="hover:bg-red-300 text-red font-bold p-2 rounded"
-            @click="removeMillerLiteTwelve"
-          >
-            Cancel
-          </button> -->
         </div>
       </div>
     </div>
@@ -104,12 +80,6 @@
           >
             Buy
           </button>
-          <!-- <button
-            class="hover:bg-red-300 text-red font-bold p-2 rounded"
-            @click="removeCoorsTwelve"
-          >
-            Cancel
-          </button> -->
         </div>
         <img src="@/assets/Coors-Original.png" class="h-24 mt-8" />
         <div class="bg-white border shadow-lg rounded-lg p-2 m-2">
@@ -124,12 +94,6 @@
           >
             Buy
           </button>
-          <!-- <button
-            class="hover:bg-red-300 text-red font-bold p-2 rounded"
-            @click="removeCoorsTwentyFour"
-          >
-            Cancel
-          </button> -->
         </div>
       </div>
     </div>
@@ -143,7 +107,6 @@ import { storeToRefs } from "pinia";
 // Search Form Refs thanks to Pinia State Management
 const beerStore = useBeerStore();
 const { totalCount, totalPrice, totalVolume, receipt } = storeToRefs(beerStore);
-// const { getTime } = beerStore;
 
 const calculateVolume = () => {
   totalVolume.value = totalCount.value * 12;
@@ -185,40 +148,4 @@ const buyCoorsTwentyFour = () => {
   calculateVolume();
   receipt.value.push("Coors Original Twenty Four Pack");
 };
-// const removeBudLightSingle = () => {
-//   totalCount.value--;
-//   totalPrice.value -= 2.0;
-//   calculateVolume();
-//   receipt.value.pop("Bud Light 12oz");
-// };
-// const removeBudLightSixer = () => {
-//   totalCount.value -= 6;
-//   totalPrice.value -= 8.5;
-//   calculateVolume();
-//   receipt.value.pop("Bud Light Six Pack");
-// };
-// const removeMillerLiteSixer = () => {
-//   totalCount.value -= 6;
-//   totalPrice.value -= 8.5;
-//   calculateVolume();
-//   receipt.value.pop("Miller Lite Six Pack");
-// };
-// const removeMillerLiteTwelve = () => {
-//   totalCount.value -= 12;
-//   totalPrice.value -= 13.5;
-//   calculateVolume();
-//   receipt.value.pop("Miller Lite Twelve Pack");
-// };
-// const removeCoorsTwelve = () => {
-//   totalCount.value -= 12;
-//   totalPrice.value -= 14;
-//   calculateVolume();
-//   receipt.value.pop("Coors Original Twelve Pack");
-// };
-// const removeCoorsTwentyFour = () => {
-//   totalCount.value -= 24;
-//   totalPrice.value -= 22;
-//   calculateVolume();
-//   receipt.value.pop("Coors Original Twenty Four Pack");
-// };
 </script>
